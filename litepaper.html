@@ -1,0 +1,131 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title></title></head><body><h1>The Fractional Foundation</h1>
+<p>Fractional is a science/thought experiment to determine whether a decentralized centralbank-like entity could be structured and sustained solely based on simple, fraction based math applied to its core token’s activity.</p>
+<p>Initial conception was simple: burning is a wasteful destruction of value, so how could some of that value be retained in a mathematically provable way while still honoring the goal of burning (reducing supply to help inflate the unit price of the asset)?</p>
+<p>This created XFBT &amp; XFRS (originally XBPT &amp; XBPS as BurnPool in earliest dev phase), which set a tax divisor (10 initially/at launch), and burns half of the taxed amount, and pooled the other half in a wallet that manages a second indivisible token which is minted and transferred to the wallet who’s activity minted it so long as they transferred enough of the token to mint a share, otherwise half of the would-be pooled amount was transferred to an ops wallet instead as a means to afford ops costs (if it was ever launched as a public science experiment rather than just a testchain novelty), with the remainder being added back into the transfer amount.</p>
+<p>But still… half of the tax was burnt, and going to waste… the problem I wanted to solve in the first place, so I’d effectively still solved nothing, I’d just shifted the goalposts. Which inspired the second conception that added XFF and XFN, and changed the name/direction: <strong>“blinting”</strong>. Technically the XFRS minting process isn’t burning anything, just pooling a tax… we could call that <strong>“tinting”</strong>. But with FractionalFiat, and FractionalEntropy, the burned tokens are still burnt, but the number burnt is then used to determine whether to “blint” a new asset of another class, binding the supply inflation of the derivative classes to the burnt quantity in a mathematically provable way.</p>
+<p>And that… is all Fractional is. A Burn &amp; Pool token with a twist, that “tints” Reserve pool shares based on a fraction, and “blints” Fiat and Entropy based on fractions, with the latter getting exponentially more scarce as tax rates are reduced with adoption, pooling a fraction of each asset (except Reserve shares) in the Reserve pool underwriting the aforementioned “tinted” Reserve Shares. Its simple fractions all the way down.</p>
+<p>If any of this dumb idea sounds neat to you, join the Fractional Foundation, and help me get this money brinter going brrrrrrrrrrrrn, just to see if it works. If it does, its not a project I can solo (since its not very decentralized when the owner is just me :\ ), so I’ll need people helping pull this together into something approaching sustainable. In this incarnation, the shares are dumb shares that do nothing, but could provide the foundation (badumtsss) for both a DAO that realizes the goal of proper decentralization, and a fund that doesn’t just squat the pooled reserve, but instead puts it to work on behalf of XFRS holders.</p>
+<h1>The Assets Classes</h1>
+<h2>XFBT (Fractional Burn Token):</h2>
+<p>This is the central token that determines the supply inflation of all other Fractional assets. Its a deflationary burncoin like any other, but with a twist of adding <strong>“tinting”</strong> of <strong>Reserve Shares</strong>, and <strong>“blinting”</strong> of <strong>Fiat</strong> and <strong>Entropy</strong>.</p>
+<ul>
+<li>Decimals: 18</li>
+<li>Total Supply: 10900000000 (10.9 billion, 1/person @ peak pop.)</li>
+<li>Supply Orientation: Deflationary</li>
+</ul>
+<h2>XFRS (Fractional Reserve Share):</h2>
+<p>This is an indivisible token representing a unit of the underlying pool of assets, made up of a combination of XFBT, XFF, and XFN collected through tinting and blinting processes, determined by the <code>reserveFraction</code> divisors set in each contract mentioned.</p>
+<ul>
+<li>Decimals: 0</li>
+<li>Total Supply: 0 at launch, inflates based on XFBT activity</li>
+<li>Supply Orientation: Inflationary, but at a relatively low rate</li>
+</ul>
+<h2>XFF (Fractional Fiat):</h2>
+<p>This is an inflationary token “blinted” at a fraction of the burnt XFBT value (1/2 during dev/launch), multiplied by an amount to account for the supply size disparity between XFBT &amp; XFF (x100 at launch). A fraction (1/3 at launch) of XFF minted is transferred to the XFRS pool, and the remainder is transferred to the “blinter”. Intended to be more freely liquid than other assets, with a decimal count more closely reflecting real world fiat values (maybe?… activity will determine whether that idea is viable or not… went back and forth between 1 billion and 100… landed on 100 in case this works to help it stay liquid longer and give more fine tune control over the inflation rate of XFF)</p>
+<ul>
+<li>Decimals: 6</li>
+<li>Total Supply: 1000000000000 (1 trillion) at launch, inflates based on XFBT activity</li>
+<li>Supply Orientation: Inflationary, at a low but appreciable and fine tunable rate.</li>
+</ul>
+<h2>XFN (Fractional Entropy):</h2>
+<p>This is a deflationary token with a “blinted” at a fraction of the burnt XFBT value. To determine minting, it takes the minted XFF value (pre-supply adjustment multiplication), and divides it by the current core tax divisor squared, and if that value is &gt;=1, it mints the XFN and transfers a fraction (1/2 at launch to provide max value to XFRS holders) to the XFRS pool, and the remainder to the “blinter”. Intended to be a scarce asset, like a gold/BTC.</p>
+<ul>
+<li>Decimals: 18</li>
+<li>Total Supply: 0 at launch, inflates based on XFBT activity</li>
+<li>Supply Orientation: Supply increases with XFBT activity, at a very low and exponentially scarcer rate (assuming core tax rate is reduced with adoption, and/or 4000+ sized stacks of XFBT slip out of reach for most with shrinking supply), making it deflationary given the activity its derived from is from a deflationary asset with a shrinking supply, while its scarcity is exponentially increased with each reduction in tax… I believe… I’m not an economist.</li>
+</ul>
+<h1>Tokenomics</h1>
+<p>At Launch:</p>
+<ul>
+<li>10 = core tax divisor (1/10 tax)</li>
+<li>1/2 tax = POOL, share distribution will be tinted at a rate of 1 XFRS/100 XFBT pooled, where XFRS calc &gt;=1, otherwise 1/2 of the would-be pooled amount is sent to the ops wallet to help maintain ops costs, with the rest returning to the readyAmount and transferred</li>
+<li>1/2 tax = BURN, blint XFF at a rate of 1/2 the burn x100 (to account for supply size disparity) so long as the pre-multiplied XFF calc &gt;=1, and blint XFN at a rate of 1 XFN / (pre-multiplied XFF calc/entropyFraction/(core tax*core tax)), so long as XFN calc &gt;=1</li>
+<li>1/2 of XFN and 1/3 of XFF blinted is pooled in XFRS, the rest is transferred to the “blinter”</li>
+<li>all fraction divisors can be adjusted by owner, except 7… the core tax divisor is hard coded to not accept anything lower than 7, maintaining a hardcoded max core tax rate of 14.2857%. Considered 5 and 6 for the lower bound, but feel like treating this more like a sales tax than an income/cap-gains tax in scale feels more right… may or may not regret the limitation but it seems logical atm…</li>
+</ul>
+<h2>Scarcity Metrics (At Launch)</h2>
+<ul>
+<li>XFRS = 1/200 XFBT tx.value if 1/200 tx.value &gt;=1 (indivisible, so remainder rolled back into transfer value)</li>
+<li>XFF = 10/4 XFBT tx.value if 1/40 tx.value &gt;=1</li>
+<li>XFN = 1/2000 XFBT tx.value, if 1/2000 tx.value &gt;=1 (will be 1/4000 when fiatFraction = 10 instead of 5)</li>
+<li>XFBT loses ~1/10 tx.value from market supply each tx (less non-share minting remainder of pooled value that’s rolled back into the transfer, and only 7.5% for sub-XFRS minting tx sizes given only half the pool collected as ops tax)</li>
+<li>as core tax divisor increases to lower the tax rate with adoption, scarcity of XFN increases exponentially (given the core tax divisor squared is used as the divisor in its minting calculation, so higher divisor = lower tax, but exponentially harder to mint XFN)</li>
+</ul>
+<h1>Owner (Future DAO?) Controllable Values</h1>
+<h2>Tokenomics Values</h2>
+<h3>XFBT</h3>
+<ul>
+<li><code>uint8 taxFraction</code>: core tax divisor. hard coded requirement that its &gt;= 7 to retain a max core tax of 14.2857% (10, for 1/10 as launch default)</li>
+<li><code>uint8 reserveFraction</code>: divisor for the fraction of the tax that is considered for the reserve pool (2, for 1/2 as launch default)</li>
+<li><code>uint8 opsFraction</code>: divisor for the fraction of the pool considered amount to transfer to the ops wallet for any sub-share minting transfers (2, for 1/2 as launch default)</li>
+<li><code>uint8 brintFraction</code>: divisor for the fraction of the burnt amount to be considered for brinting numbers (2, for 1/2 as launch default)</li>
+<li><code>uint8 fiatFraction</code>: multiplier for blinted value of XFF to account for supply size disparity (100, for 100/1 as launch default, able to be adjusted to provide an extra means to adjust XFF inflation rate to adhere to whatever DAO set targets are decided by consensus. at launch the unilaterally decided inflation target consensus is… it doesn’t matter its inflation rate when its at least not some trillion/quadrillion+ supply shitcoin and has no value/liquidity to start from which to derive a meaningful consensus :P)</li>
+<li><code>uint8 entropyFraction</code>: divisor for blinted value of XFN to account for supply size disparity (5, for 1/5 as launch default, but I <em>believe</em> 1/10 is the more “correct” ratio… increment from 5 to 10 over first 6 months to help with early interest maybe?)</li>
+</ul>
+<h3>XFF</h3>
+<ul>
+<li><code>uint8 reserveFraction</code>: divisor for the fraction of minted XFF to pool in Reserve pool (3, for 1/3 as launch default)</li>
+</ul>
+<h3>XFN</h3>
+<ul>
+<li><code>uint8 reserveFraction</code>: divisor for the fraction of minted XFN to pool in Reserve pool (2, for 1/2 as launch default)</li>
+</ul>
+<h2>Operational Values</h2>
+<h3>XFBT</h3>
+<ul>
+<li><code>bool poolLinked</code>: tracks whether pool is currently linked or not, disabling pool tax if its not</li>
+<li><code>bool taxEnabled</code>: tracks whether tax is enabled or not, acting as a standard ERC20 token if its not</li>
+<li><code>address reserve_address</code>: the address for XFRS, which retains a Reserve pool of XFBT, XFF, and XFN; if not set, poolLinked is false</li>
+<li><code>address ops_address</code>: the wallet held by Fractional Foundation to be used for operational expenses (accounting, legal, hiring, infrastructure, marketing, etc); if not set ops_tax isn’t collected</li>
+<li><code>address lp_pool_address</code>: address for the official liquidity pool, to disable tax for intermediary transfers; if not set, swaps will incur additional taxes (I think… don’t fully understand that side of liquidity pools)</li>
+<li><code>address lp_router_address</code>: address for the official liquidity pool, to disable tax for intermediary transfers; if not set, swaps will incur additional taxes (I think… don’t fully understand that side of liquidity pools)</li>
+</ul>
+<p>real</p>
+<h3>XFRS</h3>
+<ul>
+<li><code>address minter_address</code>: address of permitted minting contract (XFBT as launch default)</li>
+</ul>
+<h3>XFF</h3>
+<ul>
+<li><code>address minter_address</code>: address of permitted minting contract (XFBT as launch default)</li>
+<li><code>address reserve_address</code>: address of Fraction Reserve pool (XFRS address as launch default)</li>
+</ul>
+<h3>XFN</h3>
+<ul>
+<li><code>address minter_address</code>: address of permitted minting contract (XFBT as launch default)</li>
+<li><code>address reserve_address</code>: address of Fraction Reserve pool (XFRS address as launch default)</li>
+</ul>
+<h1>Team</h1>
+<h2>Current (1)</h2>
+<ul>
+<li><strong>Brandon Thorn</strong>: developer (fullstack web 2.0 + Unity3D game dev) with 10+ years professional experience and a lifetime of nerd experience. In a previous life I founded, developed and compiled a small team around <strong>sourced.fm</strong>, an experiment in social capitalism pairing regionalized music discussions with crowdfunding (failed to grow adoption to the scale required for the crowdfunding component after a poorly thought through/half-hocked soft launch, but learned a lot failing :P). Currently the Web &amp; Systems Manager @ <a href="https://exclaim.ca">Exclaim! Media</a>, in the process of handing off infrastructure management to focus on webdev requirements of the job only so I can take on new work or run with side projects (like this one :P).<br/><br/>Game projects include a Room Sim concept prototype (think FB Horizons before it was announced, featuring a synced Rick Astley experience for all to enjoy :P), a music synced 2.5D Valheim inspired robot action adventure game hardcoded to 144BPM with a max APM to match, and an economics based 4X game featuring non-local expansion played out on a chessboard (still picking at this one).<br/><br/>More recently playing with Solidity/DLT dev. Participated in the Chainlink hosted Hardhat Solidity dev workshop  earlier this year (2021) and now I can’t look away…</li>
+</ul>
+<h2>Essential Unfilled Roles (7)</h2>
+<ul>
+<li><strong>Legal</strong>: IANAL, but I did accidentally steal a highschool Law textbook once after auditing the class for a semester, which meant I wasn’t on the class list for a call to remind me to bring it back… oops :\ … on the upside, I know now the statute of limitations of highschool textbook theft has run its course, so I’m allowed to tell you lol. I’m going to need a crypto-savvy lawyer buddy in my corner to make this real.</li>
+<li><strong>Accounting/Economic Theory</strong>: I’ll need someone who understands the tax ramifications of all this to be compiling books in an orderly way, and ensuring any tax liabilities are in whatever account and form of capital needed to pay the bills, regardless of the state of the market or asset prices. Ideally between bookkeeping and tax compliance management (sorry :\ ), this person has strong economic theory fundamentals and can help shape early KPI objectives.</li>
+<li><strong>Solidity/React Devs</strong>: I am a fairly new blockchain developer, and there’s all kinds of roadblocks I still run into with even the simplest ideas. Experienced dev talent that could help shape the future feature-sets and integrate the system with a DAO would be essential for this to be anything more than 4 ERC20 tokens with some functions to tweak the underlying fractions.</li>
+<li><strong>Ops/PM</strong>: I like organizing things/code/ideas… but don’t want to be the one organizing the many people/processes/tasks that will be required to keep this machine operational (was one thing I learned failing at sourced.fm… I can’t be that guy while also trying to guide/dev product direction, or its doomed to fail given the context shifts required between micro and macro just leading to burnout). Ops/PM role will need to have a firm understanding of the technology, while not necessarily needing to be of a tech background (basically, I need a Jared from Silicon Valley who can be the glue of the Foundation holding it together and keeping it moving forward amid whatever chaos may come :P)</li>
+<li><strong>Marketing/Community</strong>: This idea only works with liquidity, and that means people… which means marketing. Marketing is only half the role though. for any viable crypto project, especially aiming to operate as a DAO, a marketing minded community manager would be an ideal asset to help the foundation grow into itself and its potential by engaging the community as it forms and including it in development/fractional tuning decisions until the DAO is able to officially handle that role.</li>
+<li><strong>Bizdev/B2B Sales</strong>: There are a lot of commercial applications for the underlying structure going on here (past a certain scale), especially once a DAO is formed atop the Reserve and the reserve pool capital is put to work. As those nextgen features (lending, VC, and insurance come to mind) are considered/developed, onboarding corps, both large and small, local and abroad, to leverage the infrastructure would be ideal.</li>
+<li><strong>Security Audit (third party contract)</strong>: As stated, I’m a relatively noob Solidity dev, and while the tokens are mostly standard ERC20 contracts using OpenZeppelin’s implementation contract as the base, there are customizations that I’d want to have reviewed by someone more experienced to ensure nothing unforeseen ruins the experiment and costs people their investments.</li>
+</ul>
+<h1>Roadmap</h1>
+<h2>To Date</h2>
+<ul>
+<li>November 18th, 2021: concept inception as Burnpool with XBPT &amp; XBPS &amp; initial contracts &amp; tasks written</li>
+<li>November 21st, 2021: blinting/tinting concepts/delineation becomes more clear, and project changes to Fractional, adding XFF and XFN to the now renamed XFBT and XFRS</li>
+<li>November 21st, 2021: RC contracts compiled</li>
+<li>November 22nd-24th, 2021: wrote this documentation, domain registered, logo made, website made, pitchdeck made</li>
+<li>November 25th, 2021: v0 successfully deployed on local testnet</li>
+<li>currently doing mild code cleanup, improving support tooling, and thinking through next steps</li>
+</ul>
+<h2>Next Steps (rather than pretending to have an actual timeline…)</h2>
+<ul>
+<li>launching to mainnet at some undetermined date when there’s at least a couple other people helping manage the day-to-day ops &amp; potentially helping chip in initial liquidity (I can toss in some of it and had intended to fully fund BurnPool to start when it was just 2 kind of throwaway tokens, but funding 4 LPs + paying for security audits for 4 more seriously taken tokens is going to get a bit pricey, so any early believers who want to help capitalize those, especially those with initial liquidity offering experience would be appreciated/make the project both more reputable and viable)</li>
+<li>after launch will likely make some super simple React app just to display market KPIs for the assets (since the value of XFRS is underwritten by a pool of assets, so I want to track under/overperformance metrics for the Reserve Shares at minimum to contrast book vs market value)</li>
+<li>after mainnet launch, will begin process of defining DAO, building out DAO (or jumping onto an existing DAO service maybe?… likely? lol), and announcing XFRS=&gt;DAO LP swaps with future team + community feedback guiding structure and founding direction/strategy</li>
+<li>with a DAO, there’d almost certainly be a need for more app dev, so more dev team hires would be needed, requiring some of the ops_wallet funds to be tapped. this will help augment the basic KPI dashboard to include inflation, holder, activity, and liquidity metrics for each asset, giving the DAO more insight into the economy its tasked with stewarding</li>
+<li>post DAO formation and dashboard augmentations, DAO can begin discussions for adding value to XFRS by making use of Reserve pool capital to underwrite additional services (lending, VC, and insurance come to mind) instead of just squatting the pool</li>
+</ul>
+</body></html>

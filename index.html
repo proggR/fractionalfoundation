@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Fractional Foundation: The decentralized money brinter that goes brrrrrrrrrrrrn (ie: the decentralized central bank)</title>
+      <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
+      <link rel="stylesheet" href="scribbler-global.css">
+      <link rel="stylesheet" href="scribbler-landing.css">
+      <link rel="author" href="humans.txt">
+  </head>
+  <body>
+    <nav>
+      <div class="logo"></div>
+      <ul class="menu">
+        <div class="menu__item toggle"><span></span></div>
+        <li class="menu__item"><a href="v0PitchDeck.pdf" target="_blank" class="link link--dark"><i class="fas fa-file-powerpoint"></i> <span class="black">Pitchdeck</span></a></li>
+        <li class="menu__item"><a href="litepaper.html" target="_blank" class="link link--dark"><i class="fa fa-book"></i> <span class="black">Litepaper/Overview</span></a></li>
+        <li class="menu__item"><a href="https://crbn.social/fractional" target="_blank" class="link link--dark"><img src="assets/CarbonIcon.png" style="height:14px;"/> <span class="black">Carbon</span></a></li>
+        <li class="menu__item"><a href="https://twitter.com/fractionalfound" target="_blank" class="link link--dark"><i class="fa fa-twitter"></i> <span class="black">Twitter</span></a></li>
+        <li class="menu__item"><a href="https://github.com/proggR/fractionalfoundation" target="_blank" class="link link--dark"><i class="fa fa-github"></i> <span class="black">Github</span></a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <img src="assets/ColorPaddedHoriz.png" style="width:40%"/>
+      <h1 class="hero__title">Fractional<span class="black thin">.Foundation</span></h1>
+      <p class="hero__description">The <span class="under">decentralized</span> money <strong class="branded">brinter</strong> that goes <strong>brrrrrrrrrrrrn</srtrong></p>
+      <p class="hero__description"><strong>(or in other words, a decentralized central bank)</strong></p>
+      <p class="hero__description">1/10 tx.value = tax; 1/2 <strong class="branded">tints</strong> <strong>Fractional Reserve Shares</strong>, 1/2 is burnt, <strong class="branded">brinting</strong> <strong>Fiat</strong> & <strong>Entropy</strong>. <span class="under">Fractions!</span></p>
+    </div>
+    <div class="hero__terminal">
+      <pre>
+        <!-- Place your demo code here -->
+        <code class="shell-session demo">proggR ~ $ </code>
+      </pre>
+    </div>
+    <div class="wrapper">
+      <div class="feature">
+        <div class="feature__item">
+          <h3 class="section__title">XFBT: <span class="black">Fractional Burn Token</span></h3>
+          <p>Deflationary Burn Token that determines inflation rate of all other assets based on its activity.</p>
+          <p><strong>Initial Supply:</strong> 10.9 billion*<br/><strong>Decimals:</strong> 18<br/><br/>(*:1/person at projected peak pop.)</p>
+        </div>
+        <div class="feature__item">
+          <h3 class="section__title">XFRS: <span class="black">Fractional Reserve Share</span></h3>
+          <p>Reserve Shares are an indivisible asset representing a unit of the underlying pool of assets (XFBT, XFF, XFN).</p>
+          <p><strong>Initial Supply:</strong> 0<br/><strong>Decimals:</strong> 0</p>
+        </div>
+        <div class="feature__item">
+          <h3 class="section__title">XFF: <span class="black">Fractional Fiat</span></h3>
+          <p>Inflationary asset intended to be more liquid than other asset classes with fine tunable inflation control. </p>
+          <p><strong>Initial Supply:</strong> 1 trillion<br/><strong>Decimals:</strong> 6</p>
+        </div>
+        <div class="feature__item">
+          <h3 class="section__title">XFN: <span class="black">Fractional Entropy</span></h3>
+          <p>Scarce deflationary asset that gets exponentially more scarce as core tax rate is lowered.</p>
+          <p><strong>Initial Supply:</strong> 0<br/><strong>Decimals:</strong> 18</p>
+        </div>
+        <div class="feature__item">
+          <h3 class="section__title">DAO  <span class="black">Token (Future)</span></h3>
+          <p>To ensure this new money supply remains decentralized, it must have and be governed by a DAO.</p>
+          <p><strong>Current Team Size:</strong> 1<br/><strong>Necessary Unfilled Roles:</strong> 7</p>
+        </div>
+        <div class="feature__item">
+          <h3 class="section__title"><span class="black">More?...</span></h3>
+          <p><strong>Fractional</strong> isn't going to stop experimenting with social-capitalism. Got society changing ideas you have to see built to prove? <a class="brandedCTA" href="mailto:admin@fractional.foundation">hmu</a></p>
+        </div>
+      </div>
+      <div class="keybinding">
+        <ul class="keybinding__detail">
+          <h3 class="keybinding__title">Core Tax Fractions</h3>
+          <li><span class="code code--inline">taxFraction:</span> <span class="keybinding__label">10, for 1/10</span></li>
+          <li><span class="code code--inline">brintFraction:</span> <span class="keybinding__label">2, for 1/2</span></li>
+          <li><span class="code code--inline">opsFraction:</span> <span class="keybinding__label">2, for 1/2</span></li>
+          <li><span class="code code--inline">fiatFraction:</span> <span class="keybinding__label">100, for 100/1</span></li>
+          <li><span class="code code--inline">entropyFraction:</span> <span class="keybinding__label">5, for 1/5</span></li>
+        </ul>
+        <ul class="keybinding__detail">
+          <h3 class="keybinding__title">Reserve Pool Fractions</h3>
+          <li><span class="code code--inline">XFBT:</span><span class="keybinding__label">2, for 1/2 of tax value (remainder burnt)</span></li>
+          <li><span class="code code--inline">XFF:</span><span class="keybinding__label">3, for 1/3 of brinted XFF</span></li>
+          <li><span class="code code--inline">XFN:</span><span class="keybinding__label">2, for 1/2 of brinted XFN</span></li>
+        </ul>
+      </div>
+      <div class="callout">
+        <p>All core tax and reserve fractions can be tweaked by the <strong>DAO</strong> (once organized).</p>
+        <p><span class="code code--inline">taxFraction</span> hardcoded to <span class="keybinding__label">>= 7</span> for divisor (14.2857% max core tax).</p>
+        <p>Read the Litepaper to learn more about the <strong>tinting</strong>, <strong>brinting</strong> &  <strong>reserve</strong> process under the hood.</p>
+        <p>Also includes loose roadmap & necessary unfilled roles with the <strong class="branded">Fractional Foundation</strong>.</p>
+        <a href="v0PitchDeck.pdf" class="button--primary">Pitchdeck</a>
+        <a href="doc.html" class="button--primary">Litepaper/Foundation Overview</a>
+      </div>
+      <div class="installation">
+        <h3 class="section__title">Official Contracts</h3>
+        <div class="tab__container">
+          <ul class="tab__menu">
+            <li class="tab active" data-tab="mac">eth (kovan)</li>
+            <li class="tab" data-tab="linux">bsc</li>
+            <li class="tab" data-tab="win">matic</li>
+          </ul>
+          <pre class="nohighlight code">
+            <code class="tab__pane active mac">$  To be announced during open beta period.</code>
+            <code class="tab__pane linux">$  BSC support anticipated with official launch</code>
+            <code class="tab__pane win">$  MATIC support anticipated with official launch</code>
+          </pre>
+        </div>
+      </div>
+      <div class="installation">
+        <h3 class="section__title">Official Liquidity Pools</h3>
+        <div class="tab__container">
+          <ul class="tab__menu">
+            <li class="tab active" data-tab="mac">eth (kovan)</li>
+            <li class="tab" data-tab="linux">bsc</li>
+            <li class="tab" data-tab="win">matic</li>
+          </ul>
+          <pre class="nohighlight code">
+            <code class="tab__pane active mac">$ To be announced at launch. If its not here, its not real.</code>
+            <code class="tab__pane linux">$  To be announced at launch. If its not here, its not real.</code>
+            <code class="tab__pane win">$  To be announced at launch. If its not here, its not real.</code>
+          </pre>
+        </div>
+      </div>
+    </div>
+    <div class="changelog">
+      <div class="wrapper">
+        <h3 class="section__title">Fractional Timeline</h3>
+        <div class="changelog__item">
+          <div class="changelog__meta">
+            <h4 class="changelog__title">v0.0.0</h4>
+            <small class="changelog__date">11/18/2021</small>
+          </div>
+          <div class="changelog__detail">
+            <ul>
+              <li>concept inception as <strong>Burnpool</strong> with XBPT & XBPS</li>
+              <li>initial contracts & hardhat tasks written (but not ran/tested)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="changelog__item">
+          <div class="changelog__meta">
+            <h4 class="changelog__title">v0.0.1</h4>
+            <small class="changelog__date">11/21/2021</small>
+          </div>
+          <div class="changelog__detail">
+            <ul>
+              <li><strong>brinting/tinting</strong> concepts/delineation becomes more clear</li>
+              <li>project changes in scope/direction, being renamed to <strong>Fractional</strong></li>
+              <li>renamed XBPT=>XFBT and XBPS=>XFRS</li>
+              <li>added XFF and XFN and their underlying brinting mechanism</li>
+            </ul>
+          </div>
+        </div>
+        <div class="changelog__item">
+          <div class="changelog__meta">
+            <h4 class="changelog__title">v0.1.0</h4>
+            <small class="changelog__date">11/25/2021</small>
+          </div>
+          <div class="changelog__detail">
+            <ul>
+              <li><strong>deployed to testnet</li>
+            </ul>
+          </div>
+        </div>
+        <div class="changelog__callout">
+          <a href="#" class="button--secondary">Checkout Full Log</a>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <img src="assets/WhiteNoBack.png" style="height:30px;"/> <span class="footer-text">is a project made with <i class="fa fa-heart"></i> for the <i class="fa fa-globe-africa"></i>, started in <i class="fab fa-canadian-maple-leaf"></i></span>
+      <ul class="footer-menu">
+        <div class="menu__item toggle"><span></span></div>
+        <li class="menu__item"><a href="v0PitchDeck.pdf" target="_blank" class="link link--light"><i class="fas fa-file-powerpoint"></i> Pitchdeck</a></li>
+        <li class="menu__item"><a href="litepaper.html" target="_blank" class="link link--light"><i class="fa fa-book"></i> Litepaper/Overview</a></li>
+        <li class="menu__item"><a href="https://crbn.social/fractional" target="_blank" class="link link--light"><img src="assets/CarbonIcon.png" style="height:28px;"/> Carbon</a></li>
+        <li class="menu__item"><a href="https://twitter.com/fractionalfound" target="_blank" class="link link--light"><i class="fa fa-twitter"></i> Twitter</a></li>
+        <li class="menu__item"><a href="https://github.com/proggR/fractionalfoundation" target="_blank" class="link link--light"><i class="fa fa-github"></i> Github</a></li>
+      </ul>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="scribbler.js"></script>
+  </body>
+</html>

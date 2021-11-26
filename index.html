@@ -191,7 +191,10 @@
                     container: '#waveform',
                     scrollParent: true
                 });
-                wavesurfer.load('Brandon.wav');
+                wavesurfer.load('http://fractional.foundation/Brandon.wav');
+                wavesurfer.on('ready', function () {
+                    wavesurfer.play();
+                });
                 </script>
               </li>
             </ul>

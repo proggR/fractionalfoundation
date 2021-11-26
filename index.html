@@ -11,6 +11,9 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
       <link rel="stylesheet" href="scribbler-global.css">
       <link rel="stylesheet" href="scribbler-landing.css">
+
+      <script src="https://unpkg.com/wavesurfer.js"></script>
+
       <link rel="author" href="humans.txt">
   </head>
   <body>
@@ -167,6 +170,36 @@
         </div>
         <div class="changelog__callout">
           <a href="#" class="button--secondary">Checkout Full Log</a>
+        </div>
+      </div>
+    </div>
+    <div class="changelog">
+      <div class="wrapper">
+        <h3 class="section__title">Fractional In The Media</h3>
+        <div class="changelog__item">
+          <div class="changelog__meta">
+            <h4 class="changelog__title">v0.1.0</h4>
+            <small class="changelog__date">11/25/2021</small>
+          </div>
+          <div class="changelog__detail">
+            <ul>
+              <li>Norm MacDonald's ghost covered our testnet deployment</li>
+              <li>
+                <div id="waveform"></div>
+                <script type="text/javascript">
+                var wavesurfer = WaveSurfer.create({
+                    container: '#waveform',
+                    scrollParent: true
+                });
+                wavesurfer.load('Brandon.wav');
+                </script>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="changelog__callout">
+          <a href="#" class="button--secondary">Contact If Interested In Covering (for real)</a>
         </div>
       </div>
     </div>

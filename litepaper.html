@@ -2,33 +2,33 @@
 <p>Fractional is a science/thought experiment to determine whether a decentralized centralbank-like entity could be structured and sustained solely based on simple, fraction based math applied to its core token’s activity.</p>
 <p>Initial conception was simple: burning is a wasteful destruction of value, so how could some of that value be retained in a mathematically provable way while still honoring the goal of burning (reducing supply to help inflate the unit price of the asset)?</p>
 <p>This created XFBT &amp; XFRS (originally XBPT &amp; XBPS as BurnPool in earliest dev phase), which set a tax divisor (10 initially/at launch), and burns half of the taxed amount, and pooled the other half in a wallet that manages a second indivisible token which is minted and transferred to the wallet who’s activity minted it so long as they transferred enough of the token to mint a share, otherwise half of the would-be pooled amount was transferred to an ops wallet instead as a means to afford ops costs (if it was ever launched as a public science experiment rather than just a testchain novelty), with the remainder being added back into the transfer amount.</p>
-<p>But still… half of the tax was burnt, and going to waste… the problem I wanted to solve in the first place, so I’d effectively still solved nothing, I’d just shifted the goalposts. Which inspired the second conception that added XFF and XFN, and changed the name/direction: <strong>“blinting”</strong>. Technically the XFRS minting process isn’t burning anything, just pooling a tax… we could call that <strong>“tinting”</strong>. But with FractionalFiat, and FractionalEntropy, the burned tokens are still burnt, but the number burnt is then used to determine whether to “blint” a new asset of another class, binding the supply inflation of the derivative classes to the burnt quantity in a mathematically provable way.</p>
-<p>And that… is all Fractional is. A Burn &amp; Pool token with a twist, that “tints” Reserve pool shares based on a fraction, and “blints” Fiat and Entropy based on fractions, with the latter getting exponentially more scarce as tax rates are reduced with adoption, pooling a fraction of each asset (except Reserve shares) in the Reserve pool underwriting the aforementioned “tinted” Reserve Shares. Its simple fractions all the way down.</p>
+<p>But still… half of the tax was burnt, and going to waste… the problem I wanted to solve in the first place, so I’d effectively still solved nothing, I’d just shifted the goalposts. Which inspired the second conception that added XFF and XFN, and changed the name/direction: <strong>“brinting”</strong>. Technically the XFRS minting process isn’t burning anything, just pooling a tax… we could call that <strong>“tinting”</strong>. But with FractionalFiat, and FractionalEntropy, the burned tokens are still burnt, but the number burnt is then used to determine whether to “brint” a new asset of another class, binding the supply inflation of the derivative classes to the burnt quantity in a mathematically provable way.</p>
+<p>And that… is all Fractional is. A Burn &amp; Pool token with a twist, that “tints” Reserve pool shares based on a fraction, and “brints” Fiat and Entropy based on fractions, with the latter getting exponentially more scarce as tax rates are reduced with adoption, pooling a fraction of each asset (except Reserve shares) in the Reserve pool underwriting the aforementioned “tinted” Reserve Shares. Its simple fractions all the way down.</p>
 <p>If any of this dumb idea sounds neat to you, join the Fractional Foundation, and help me get this money brinter going brrrrrrrrrrrrn, just to see if it works. If it does, its not a project I can solo (since its not very decentralized when the owner is just me :\ ), so I’ll need people helping pull this together into something approaching sustainable. In this incarnation, the shares are dumb shares that do nothing, but could provide the foundation (badumtsss) for both a DAO that realizes the goal of proper decentralization, and a fund that doesn’t just squat the pooled reserve, but instead puts it to work on behalf of XFRS holders.</p>
 <h1>The Assets Classes</h1>
 <h2>XFBT (Fractional Burn Token):</h2>
-<p>This is the central token that determines the supply inflation of all other Fractional assets. Its a deflationary burncoin like any other, but with a twist of adding <strong>“tinting”</strong> of <strong>Reserve Shares</strong>, and <strong>“blinting”</strong> of <strong>Fiat</strong> and <strong>Entropy</strong>.</p>
+<p>This is the central token that determines the supply inflation of all other Fractional assets. Its a deflationary burncoin like any other, but with a twist of adding <strong>“tinting”</strong> of <strong>Reserve Shares</strong>, and <strong>“brinting”</strong> of <strong>Fiat</strong> and <strong>Entropy</strong>.</p>
 <ul>
 <li>Decimals: 18</li>
 <li>Total Supply: 10900000000 (10.9 billion, 1/person @ peak pop.)</li>
 <li>Supply Orientation: Deflationary</li>
 </ul>
 <h2>XFRS (Fractional Reserve Share):</h2>
-<p>This is an indivisible token representing a unit of the underlying pool of assets, made up of a combination of XFBT, XFF, and XFN collected through tinting and blinting processes, determined by the <code>reserveFraction</code> divisors set in each contract mentioned.</p>
+<p>This is an indivisible token representing a unit of the underlying pool of assets, made up of a combination of XFBT, XFF, and XFN collected through tinting and brinting processes, determined by the <code>reserveFraction</code> divisors set in each contract mentioned.</p>
 <ul>
 <li>Decimals: 0</li>
 <li>Total Supply: 0 at launch, inflates based on XFBT activity</li>
 <li>Supply Orientation: Inflationary, but at a relatively low rate</li>
 </ul>
 <h2>XFF (Fractional Fiat):</h2>
-<p>This is an inflationary token “blinted” at a fraction of the burnt XFBT value (1/2 during dev/launch), multiplied by an amount to account for the supply size disparity between XFBT &amp; XFF (x100 at launch). A fraction (1/3 at launch) of XFF minted is transferred to the XFRS pool, and the remainder is transferred to the “blinter”. Intended to be more freely liquid than other assets, with a decimal count more closely reflecting real world fiat values (maybe?… activity will determine whether that idea is viable or not… went back and forth between 1 billion and 100… landed on 100 in case this works to help it stay liquid longer and give more fine tune control over the inflation rate of XFF)</p>
+<p>This is an inflationary token “brinted” at a fraction of the burnt XFBT value (1/2 during dev/launch), multiplied by an amount to account for the supply size disparity between XFBT &amp; XFF (x100 at launch). A fraction (1/3 at launch) of XFF minted is transferred to the XFRS pool, and the remainder is transferred to the “brinter”. Intended to be more freely liquid than other assets, with a decimal count more closely reflecting real world fiat values (maybe?… activity will determine whether that idea is viable or not… went back and forth between 1 billion and 100… landed on 100 in case this works to help it stay liquid longer and give more fine tune control over the inflation rate of XFF)</p>
 <ul>
 <li>Decimals: 6</li>
 <li>Total Supply: 1000000000000 (1 trillion) at launch, inflates based on XFBT activity</li>
 <li>Supply Orientation: Inflationary, at a low but appreciable and fine tunable rate.</li>
 </ul>
 <h2>XFN (Fractional Entropy):</h2>
-<p>This is a deflationary token with a “blinted” at a fraction of the burnt XFBT value. To determine minting, it takes the minted XFF value (pre-supply adjustment multiplication), and divides it by the current core tax divisor squared, and if that value is &gt;=1, it mints the XFN and transfers a fraction (1/2 at launch to provide max value to XFRS holders) to the XFRS pool, and the remainder to the “blinter”. Intended to be a scarce asset, like a gold/BTC.</p>
+<p>This is a deflationary token with a “brinted” at a fraction of the burnt XFBT value. To determine minting, it takes the minted XFF value (pre-supply adjustment multiplication), and divides it by the current core tax divisor squared, and if that value is &gt;=1, it mints the XFN and transfers a fraction (1/2 at launch to provide max value to XFRS holders) to the XFRS pool, and the remainder to the “brinter”. Intended to be a scarce asset, like a gold/BTC.</p>
 <ul>
 <li>Decimals: 18</li>
 <li>Total Supply: 0 at launch, inflates based on XFBT activity</li>
@@ -39,8 +39,8 @@
 <ul>
 <li>10 = core tax divisor (1/10 tax)</li>
 <li>1/2 tax = POOL, share distribution will be tinted at a rate of 1 XFRS/100 XFBT pooled, where XFRS calc &gt;=1, otherwise 1/2 of the would-be pooled amount is sent to the ops wallet to help maintain ops costs, with the rest returning to the readyAmount and transferred</li>
-<li>1/2 tax = BURN, blint XFF at a rate of 1/2 the burn x100 (to account for supply size disparity) so long as the pre-multiplied XFF calc &gt;=1, and blint XFN at a rate of 1 XFN / (pre-multiplied XFF calc/entropyFraction/(core tax*core tax)), so long as XFN calc &gt;=1</li>
-<li>1/2 of XFN and 1/3 of XFF blinted is pooled in XFRS, the rest is transferred to the “blinter”</li>
+<li>1/2 tax = BURN, brint XFF at a rate of 1/2 the burn x100 (to account for supply size disparity) so long as the pre-multiplied XFF calc &gt;=1, and brint XFN at a rate of 1 XFN / (pre-multiplied XFF calc/entropyFraction/(core tax*core tax)), so long as XFN calc &gt;=1</li>
+<li>1/2 of XFN and 1/3 of XFF brinted is pooled in XFRS, the rest is transferred to the “brinter”</li>
 <li>all fraction divisors can be adjusted by owner, except 7… the core tax divisor is hard coded to not accept anything lower than 7, maintaining a hardcoded max core tax rate of 14.2857%. Considered 5 and 6 for the lower bound, but feel like treating this more like a sales tax than an income/cap-gains tax in scale feels more right… may or may not regret the limitation but it seems logical atm…</li>
 </ul>
 <h2>Scarcity Metrics (At Launch)</h2>
@@ -59,8 +59,8 @@
 <li><code>uint8 reserveFraction</code>: divisor for the fraction of the tax that is considered for the reserve pool (2, for 1/2 as launch default)</li>
 <li><code>uint8 opsFraction</code>: divisor for the fraction of the pool considered amount to transfer to the ops wallet for any sub-share minting transfers (2, for 1/2 as launch default)</li>
 <li><code>uint8 brintFraction</code>: divisor for the fraction of the burnt amount to be considered for brinting numbers (2, for 1/2 as launch default)</li>
-<li><code>uint8 fiatFraction</code>: multiplier for blinted value of XFF to account for supply size disparity (100, for 100/1 as launch default, able to be adjusted to provide an extra means to adjust XFF inflation rate to adhere to whatever DAO set targets are decided by consensus. at launch the unilaterally decided inflation target consensus is… it doesn’t matter its inflation rate when its at least not some trillion/quadrillion+ supply shitcoin and has no value/liquidity to start from which to derive a meaningful consensus :P)</li>
-<li><code>uint8 entropyFraction</code>: divisor for blinted value of XFN to account for supply size disparity (5, for 1/5 as launch default, but I <em>believe</em> 1/10 is the more “correct” ratio… increment from 5 to 10 over first 6 months to help with early interest maybe?)</li>
+<li><code>uint8 fiatFraction</code>: multiplier for brinted value of XFF to account for supply size disparity (100, for 100/1 as launch default, able to be adjusted to provide an extra means to adjust XFF inflation rate to adhere to whatever DAO set targets are decided by consensus. at launch the unilaterally decided inflation target consensus is… it doesn’t matter its inflation rate when its at least not some trillion/quadrillion+ supply shitcoin and has no value/liquidity to start from which to derive a meaningful consensus :P)</li>
+<li><code>uint8 entropyFraction</code>: divisor for brinted value of XFN to account for supply size disparity (5, for 1/5 as launch default, but I <em>believe</em> 1/10 is the more “correct” ratio… increment from 5 to 10 over first 6 months to help with early interest maybe?)</li>
 </ul>
 <h3>XFF</h3>
 <ul>
@@ -114,7 +114,7 @@
 <h2>To Date</h2>
 <ul>
 <li>November 18th, 2021: concept inception as Burnpool with XBPT &amp; XBPS &amp; initial contracts &amp; tasks written</li>
-<li>November 21st, 2021: blinting/tinting concepts/delineation becomes more clear, and project changes to Fractional, adding XFF and XFN to the now renamed XFBT and XFRS</li>
+<li>November 21st, 2021: brinting/tinting concepts/delineation becomes more clear, and project changes to Fractional, adding XFF and XFN to the now renamed XFBT and XFRS</li>
 <li>November 21st, 2021: RC contracts compiled</li>
 <li>November 22nd-24th, 2021: wrote this documentation, domain registered, logo made, website made, pitchdeck made</li>
 <li>November 25th, 2021: v0 successfully deployed on local testnet</li>

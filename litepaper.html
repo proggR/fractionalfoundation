@@ -47,7 +47,7 @@
 <ul>
 <li>XFRS = 1/200 XFBT tx.value if 1/200 tx.value &gt;=1 (indivisible, so remainder rolled back into transfer value)</li>
 <li>XFF = 10/4 XFBT tx.value if 1/40 tx.value &gt;=1</li>
-<li>XFN = 1/2000 XFBT tx.value, if 1/2000 tx.value &gt;=1 (will be 1/4000 when fiatFraction = 10 instead of 5)</li>
+<li>XFN = 1/2000 XFBT tx.value, if 1/2000 tx.value &gt;=1 (will be 1/4000 when entropyFraction = 10 instead of 5)</li>
 <li>XFBT loses ~1/10 tx.value from market supply each tx (less non-share minting remainder of pooled value that’s rolled back into the transfer, and only 7.5% for sub-XFRS minting tx sizes given only half the pool collected as ops tax)</li>
 <li>as core tax divisor increases to lower the tax rate with adoption, scarcity of XFN increases exponentially (given the core tax divisor squared is used as the divisor in its minting calculation, so higher divisor = lower tax, but exponentially harder to mint XFN)</li>
 </ul>
@@ -59,7 +59,7 @@
 <li><code>uint8 reserveFraction</code>: divisor for the fraction of the tax that is considered for the reserve pool (2, for 1/2 as launch default)</li>
 <li><code>uint8 opsFraction</code>: divisor for the fraction of the pool considered amount to transfer to the ops wallet for any sub-share minting transfers (2, for 1/2 as launch default)</li>
 <li><code>uint8 brintFraction</code>: divisor for the fraction of the burnt amount to be considered for brinting numbers (2, for 1/2 as launch default)</li>
-<li><code>uint8 fiatFraction</code>: multiplier for brinted value of XFF to account for supply size disparity (100, for 100/1 as launch default, able to be adjusted to provide an extra means to adjust XFF inflation rate to adhere to whatever DAO set targets are decided by consensus. at launch the unilaterally decided inflation target consensus is… it doesn’t matter its inflation rate when its at least not some trillion/quadrillion+ supply shitcoin and has no value/liquidity to start from which to derive a meaningful consensus :P)</li>
+<li><code>uint8 fiatFraction</code>: multiplier for brinted value of XFF to account for supply size disparity (100, for 100/1 as launch default, able to be adjusted to provide an extra means to adjust XFF inflation rate to adhere to whatever DAO set targets are decided by consensus. at launch the unilaterally decided inflation target consensus is… there lacks the liquidity/data/modelling from which to derive a meaningful consensus, so we'll just see where it lands to start :P)</li>
 <li><code>uint8 entropyFraction</code>: divisor for brinted value of XFN to account for supply size disparity (5, for 1/5 as launch default, but I <em>believe</em> 1/10 is the more “correct” ratio… increment from 5 to 10 over first 6 months to help with early interest maybe?)</li>
 </ul>
 <h3>XFF</h3>
@@ -80,7 +80,7 @@
 <li><code>address lp_pool_address</code>: address for the official liquidity pool, to disable tax for intermediary transfers; if not set, swaps will incur additional taxes (I think… don’t fully understand that side of liquidity pools)</li>
 <li><code>address lp_router_address</code>: address for the official liquidity pool, to disable tax for intermediary transfers; if not set, swaps will incur additional taxes (I think… don’t fully understand that side of liquidity pools)</li>
 </ul>
-<p>real</p>
+
 <h3>XFRS</h3>
 <ul>
 <li><code>address minter_address</code>: address of permitted minting contract (XFBT as launch default)</li>
@@ -113,11 +113,11 @@
 <h1>Roadmap</h1>
 <h2>To Date</h2>
 <ul>
-<li>November 18th, 2021: concept inception as Burnpool with XBPT &amp; XBPS &amp; initial contracts &amp; tasks written</li>
-<li>November 21st, 2021: brinting/tinting concepts/delineation becomes more clear, and project changes to Fractional, adding XFF and XFN to the now renamed XFBT and XFRS</li>
-<li>November 21st, 2021: RC contracts compiled</li>
-<li>November 22nd-24th, 2021: wrote this documentation, domain registered, logo made, website made, pitchdeck made</li>
-<li>November 25th, 2021: v0 successfully deployed on local testnet</li>
+<li><strong>November 18th, 2021:</strong> concept inception as Burnpool with XBPT &amp; XBPS &amp; initial contracts &amp; tasks written</li>
+<li><strong>November 21st, 2021:</strong> brinting/tinting concepts/delineation becomes more clear, and project changes to Fractional, adding XFF and XFN to the now renamed XFBT and XFRS</li>
+<li><strong>November 21st, 2021:</strong> RC contracts compiled</li>
+<li><strong>November 22nd-24th, 2021:</strong> wrote this documentation, domain registered, logo made, website made, pitchdeck made</li>
+<li><strong>November 25th, 2021:</strong> v0 successfully deployed on local testnet + flipped WIP site live</li>
 <li>currently doing mild code cleanup, improving support tooling, and thinking through next steps</li>
 </ul>
 <h2>Next Steps (rather than pretending to have an actual timeline…)</h2>

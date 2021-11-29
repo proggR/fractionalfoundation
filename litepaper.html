@@ -60,7 +60,7 @@
 <li>XFRS = 1/200 XFBT tx.value if 1/200 tx.value &gt;=1 (indivisible, so remainder rolled back into transfer value)</li>
 <li>XFF = 10/4 XFBT tx.value if 1/40 tx.value &gt;=1</li>
 <li>XFN = 1/2000 XFBT tx.value, if 1/2000 tx.value &gt;=1 (will be 1/4000 when fiatFraction = 10 instead of 5)</li>
-<li>XFBT loses ~1/10 tx.value from market supply each tx (less non-share minting remainder of pooled value that’s rolled back into the transfer, and only 7.5% for sub-XFRS minting tx sizes given only half the pool collected as ops tax)</li>
+<li>XFBT loses ~1/10 tx.value from market supply each tx (less non-share minting remainder of pooled value that’s rolled back into the transfer, and only 7.5% for sub-XFRS minting tx sizes given only half the pool collected as ops tax, which is technically not "removed from the market", but instead will be sold as needed for ops expenses)</li>
 <li>as core tax divisor increases to lower the tax rate with adoption, scarcity of XFN increases exponentially (given the core tax divisor squared is used as the divisor in its minting calculation, so higher divisor = lower tax, but exponentially harder to mint XFN)</li>
 </ul>
 <h1>Owner (Future DAO?) Controllable Values</h1>
@@ -88,7 +88,7 @@
 <ul>
 <li><code>bool reserveLinked</code>: tracks whether reserve is currently linked and/or reserve share tinting is enabled</li>
 <li><code>bool fiatLinked</code>: tracks whether fiat contract is currently linked and/or fiat brinting is enabled</li>
-<li><code>bool entropyLinked</code>: tracks whether reserve is currently linked and/or entropy brinting is enabled</li>
+<li><code>bool entropyLinked</code>: tracks whether entropy contract is currently linked and/or entropy brinting is enabled</li>
 <li><code>bool taxEnabled</code>: tracks whether tax is enabled or not, acting as a standard ERC20 token if it's not</li>
 <li><code>address reserve_address</code>: the address for XFRS, which retains a Reserve pool of XFBT, XFF, and XFN; if not set, reserveLinked is false</li>
 <li><code>address fiat_address</code>: the address for XFF</li>

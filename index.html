@@ -191,16 +191,19 @@
           <div class="changelog__detail">
             <ul>
               <li>Norm Macdonald's AI ghost covered our testnet deployment (RIP Norm, this joke's for you 	&#60;3)<br/>
-                <div id="waveform"></div>
+                <div id="waveform"></div><br/><div><i class="fa fa-play" onclick="play()"></i></div>
                 <script type="text/javascript">
                 var wavesurfer = WaveSurfer.create({
                     container: '#waveform',
                     scrollParent: true
                 });
                 wavesurfer.load('https://fractional.foundation/Brandon.wav');
-                wavesurfer.on('ready', function () {
-                    wavesurfer.play();
-                });
+                function play(){
+                  wavesurfer.play();
+                }
+                // wavesurfer.on('click touch', function () {
+                //
+                // });
                 </script>
               </li>
             </ul>
